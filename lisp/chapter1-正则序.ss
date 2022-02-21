@@ -1,0 +1,13 @@
+(define (square x)
+    (* x x))
+(display (square 21))
+(display (square (+ 2 5)))
+(display (square (square 3)))
+(define (sum-of-squares x y)
+    (+ (square x) (square y)))
+(display (sum-of-squares 3 4))
+(define (num a)
+    (sum-of-squares (+ a 1) (* a 2)))
+(display (num 5))
+(exit)
+
