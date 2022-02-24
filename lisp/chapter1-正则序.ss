@@ -1,13 +1,12 @@
-(define (square x)
-    (* x x))
-(display (square 21))
-(display (square (+ 2 5)))
-(display (square (square 3)))
-(define (sum-of-squares x y)
-    (+ (square x) (square y)))
-(display (sum-of-squares 3 4))
-(define (num a)
-    (sum-of-squares (+ a 1) (* a 2)))
-(display (num 5))
+#|
+正则序：解释器将对计算过程完全展开而后归约求值，相比于应用序存在部分重复求值的情况
+|#
+(sum-of-squares (+ 5 1) (* 5 2))
+(+ squares (+ 5 1) squares (* 5 2))
+(+ (* (+ 5 1) (+ 5 1)) (* (* 5 2) (* 5 2)))
+;以上为完全展开
+(+ (* 6 6) (* 10 10))
+(+ 36 100)
+(136)
 (exit)
 
